@@ -9,10 +9,10 @@
 
     <div class="row">
         <div class="col-2 offset-4 my-3">
-            <%= link_to "退会しない","",class: "btn btn-primary btn-block d-inline-block" %>
+            <%= link_to "退会しない",mypage_path,class: "btn btn-primary btn-block d-inline-block" %>
         </div>
         <div class="col-2 my-3">
-            <%= link_to "退会する","",class: "btn btn-danger btn-block d-inline-block" %>
+            <%= link_to "退会する",withdraw_path,class: "btn btn-danger btn-block d-inline-block",method: :patch,"data-confirm" => "本当に退会しますか？" %>
         </div>
     </div>
 </div>

@@ -10,4 +10,8 @@ class Customer < ApplicationRecord
   validates :zip_code,presence: true
   validates :address,presence: true
   validates :telephone_number,presence: true
+  
+  def is_deleted?
+    super && (self.is_deleted == true)
+  end
 end

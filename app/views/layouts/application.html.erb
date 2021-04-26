@@ -42,8 +42,9 @@
              <% elsif admin_signed_in? %>
              <li class="nav-item">
               <a class="nav-link text-dark">商品一覧</a>
-            </li>            <li class="nav-item">
-              <a class="nav-link text-dark">会員一覧</a>
+            </li>            
+            <li class="nav-item">
+            <%= link_to "会員一覧",admin_customers_path ,class:"nav-link text-dark"%>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark">注文履歴一覧</a>
@@ -73,6 +74,9 @@
         </div>
       </nav>
     </header>
+    <% flash.each do |type,message| %>
+    <p class="<%= type %>"><%= message %></p>
+    <% end %>
     <main class="mb-auto">
     <%= yield %>
     </main>

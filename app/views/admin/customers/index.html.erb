@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+    <th>id</th>
+    <th>氏名</th>
+    <th>メールアドレス</th>
+    <th>ステータス</th>
+    </tr>
+ <% @customers.each do |customer| %>
+    <tr>
+    <td><%= customer.id %></td>
+    <td><%= customer.last_name %><%= customer.first_name %></td>
+    <td><%= customer.email %></td>
+    <td>
+        <% if customer.is_deleted? %>
+        退会済み
+        <% else %>
+        有効
+        <% end %>
+    </td>
+
+    </tr>
+ <% end %>
+</table>
+</div>

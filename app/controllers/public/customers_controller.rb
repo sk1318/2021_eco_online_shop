@@ -25,9 +25,10 @@ class Public::CustomersController < ApplicationController
     
     def withdraw
         customer = current_customer
-        customer.is_deleted = true
-        customer.update
-        redirect_to mypage_path
+        customer.update(is_deleted: true)
+        reset_session
+        flash[:notice]="ご利用ありがとうございました。"
+        redirect_to root_path
     end
     
     def login_check
@@ -37,8 +38,8 @@ class Public::CustomersController < ApplicationController
     end
     
     def current_customer?
-      cutomer = Customer.find(params[:id])
-      unless cutomer == current_customer
+      customer = Customer.find(params[:id])
+      unless customer == current_customer
           redirect_to mypage_path
       end
     end

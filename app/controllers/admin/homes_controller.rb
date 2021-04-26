@@ -1,5 +1,5 @@
 class Admin::HomesController < ApplicationController
-    before_action :admin_check,only: :top
+    before_action :admin_check
     def top
     end
     
@@ -8,5 +8,4 @@ class Admin::HomesController < ApplicationController
         redirect_to root_path
         end
     end
-    
 end
