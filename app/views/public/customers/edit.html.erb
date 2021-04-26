@@ -1,0 +1,76 @@
+<div class="container">
+    <big class="silver">会員情報編集</big>
+<%= form_with model: @customer,local: true  do |f| %>
+
+　  <div class="row">
+　    <div class="col-3">
+　      <spna>氏名</span>
+　    </div>
+　    <div class="col-3">
+          <%= f.text_field :last_name, autofocus: true,class: "form-control"  %>
+　    </div>
+　    <div class="col-3">
+        <%= f.text_field :first_name, autofocus: true,class: "form-control" %>
+　    </div>
+　  </div>
+　  
+　  <div class="row">
+　    <div class="col-3">
+　      <spna>フリガナ</span>
+　    </div>
+　    <div class="col-3">
+          <%= f.label "セイ" %>
+     　　　　<%= f.text_field :last_name_kana, autofocus: true,class: "form-control"  %>
+　    </div>
+　    <div class="col-3">
+          <%= f.label "メイ" %>
+          <%= f.text_field :first_name_kana,autofocus: true,class: "form-control" %>
+　    </div>
+　   </div>
+　    
+　   <div class="row">
+　    <div class="col-3">
+　      <spna>郵便番号</span>
+　    </div>
+　    <div class="col-3">
+    <%= f.text_field :zip_code, autofocus: true,class: "form-control"  %>
+　    </div>
+　   </div>
+   　<div class="row">
+　    <div class="col-3">
+　      <spna>住所</span>
+　    </div>
+　    <div class="col-6">
+     　<%= f.text_field :address, autofocus: true ,class: "form-control" %>
+　    </div>
+　   </div>
+　   
+　    <div class="row">
+　    <div class="col-3">
+　      <spna>電話番号</span>
+　    </div>
+　    <div class="col-3">
+      <%= f.text_field :telephone_number, autofocus: true ,class: "form-control" %>
+　    </div>
+　   </div>　
+     
+     <div class="row">
+　    <div class="col-3">
+　      <spna>メールアドレス</span>
+　    </div>
+　    <div class="col-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control"  %>
+　    </div>
+　   </div>
+　   
+　   <div class="row">
+　     <div class="col-3 offset-3">
+       <%= f.submit "編集内容を保存",class: "btn btn-success btn-block" %>
+　     </div>
+　     <div class="col-3 offset-2 ">
+　     <%= link_to "退会する",cancellation_path,class: "btn btn-danger btn-block d-inline px-3 py-2" %>
+　     </div>
+　　 </div>
+<% end %>
+
+</div>
