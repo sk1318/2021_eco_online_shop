@@ -1,5 +1,5 @@
 class Admin::HomesController < ApplicationController
-    before_action :admin_check
+    before_action :admin_check,only: :top
     def top
     end
     
