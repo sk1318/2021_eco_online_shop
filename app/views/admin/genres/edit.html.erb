@@ -1,0 +1,20 @@
+<div class="container">
+    <big class="silver">ジャンル一覧・追加</big>
+    <div class="row my-3">
+        <div class="col-3">
+          <p>ジャンル名</p>
+        </div>
+        <div class="col-9">
+        <%= form_with model: @genre,url: "/admin/genres/#{params[:id]}",local: true do |f| %>
+        <div class="row">
+            <div class="col-md-3">
+             <%= f.text_field :name,placeholder: "ジャンル名" %>
+            </div>
+            <div class="col-md-3">
+            <%= f.submit "新規登録",class: "btn btn-success btn-block mx-3" %>
+            </div>
+        </div>
+        <% end %>
+        </div>
+    </div>
+</div>

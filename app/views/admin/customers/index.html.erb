@@ -1,5 +1,6 @@
 <div class="container">
-<table class="table table-bordered">
+<big class="silver">会員一覧</big>
+<table class="table table-bordered my-3">
     <tr>
     <th>id</th>
     <th>氏名</th>
@@ -15,7 +16,7 @@
         <% if customer.is_deleted? %>
         退会済み
         <% else %>
-        有効
+        <big class="notice">有効</big>
         <% end %>
     </td>
 
