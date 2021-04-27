@@ -1,5 +1,6 @@
 class Admin::ItemsController < ApplicationController
-    
+    include CommonActions
+    before_action :admin_check
     def new
         @item = Item.new
     end
@@ -25,7 +26,7 @@ class Admin::ItemsController < ApplicationController
     def update
         @item = Item.find(params[:id])
         @item.update(item_params)
-        redirect_to admin
+        redirect_to admin_items_path
     end
     private
     
