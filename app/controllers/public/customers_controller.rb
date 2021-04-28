@@ -1,4 +1,5 @@
 class Public::CustomersController < ApplicationController
+    include CommonActions
     before_action :login_check
     before_action :current_customer?,only: [:edit,:update]
     
@@ -29,19 +30,6 @@ class Public::CustomersController < ApplicationController
         reset_session
         flash[:notice]="ご利用ありがとうございました。"
         redirect_to root_path
-    end
-    
-    def login_check
-        unless customer_signed_in?
-            redirect_to new_customer_session_path
-        end
-    end
-    
-    def current_customer?
-      customer = Customer.find(params[:id])
-      unless customer == current_customer
-          redirect_to mypage_path
-      end
     end
     
     private

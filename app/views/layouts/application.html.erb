@@ -30,7 +30,7 @@
               <a class="nav-link text-dark"href="/customers/mypage">マイページ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark">商品一覧</a>
+              <%= link_to "商品一覧",items_path,class: 'nav-link text-dark'%>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark">カート</a>
@@ -60,7 +60,7 @@
               <a class="nav-link text-dark">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark">商品一覧</a>
+              <%= link_to "商品一覧",items_path,class: 'nav-link text-dark'%>
             </li>
             <li class="nav-item">
               <%= link_to "新規登録",new_customer_registration_path ,class: 'nav-link text-dark'%>

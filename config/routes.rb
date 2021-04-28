@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     patch "costomers/withdraw"=>"customers#withdraw",as: "withdraw"    
     get "customers/cancellation"=>"customers#cancellation",as: "cancellation"
     resources :customers
+    resources :items
   end
 end
