@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     get "customers/cancellation"=>"customers#cancellation",as: "cancellation"
     resources :customers
     resources :items
+    resources :cart_items
   end
 end

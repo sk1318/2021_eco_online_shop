@@ -1,6 +1,6 @@
 class Public::ItemsController < ApplicationController
     include CommonActions
-    before_action :login_check,only:[:show]
+    before_action :login_check,only: [:show]
     
     def index
         @items = Item.all
@@ -8,5 +8,6 @@ class Public::ItemsController < ApplicationController
     
     def show
         @item = Item.find(params[:id])
+        @cart_item = CartItem.new
     end
 end
