@@ -1,18 +1,12 @@
 class Public::CartItemsController < ApplicationController
+    include CommonActions
+    before_action :login_check
+    
     def create
-        cart_items = CartItem.all
-        is_exist = false
-        id = 0
-        current_customer.cart_items.each do |cart_item|
-            if cart_item.item_id == params[:cart_item][:item_id].to_i
-                is_exist = true
-                id = cart_item.id
-            end
-        end
+        cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
         
-        if is_exist
-            cart_item = CartItem.find(id)
-            sum = cart_item.amount.to_i + params[:cart_item][:amount].to_i
+        if cart_item
+            sum = cart_item.amount + params[:cart_item][:amount].to_i
             if sum <=10
             cart_item.update(amount: sum)
             redirect_to cart_items_path
@@ -45,6 +39,18 @@ class Public::CartItemsController < ApplicationController
             redirect_to cart_items_path
         end
        
+    end
+    
+    def destroy
+        cart_item = CartItem.find(params[:id])
+        cart_item.destroy
+        redirect_to cart_items_path
+    end
+    
+    def destroy_all
+        cart_items = current_customer.cart_items
+        cart_items.destroy_all
+        redirect_to cart_items_path
     end
     private
     
