@@ -1,14 +1,14 @@
 <div class="container">
     <big class="silver">ショッピングカート</big>
-    <table claas="table">
-        <tr>
-            <th>商品名</th>
-            <th>単価（税込</th>
-            <th>数量</th> 
-            <th>小計</th>
-            <th></th>
-        </tr>
-        <% sum = 0 %>
+    <table class="table table-bordered my-3">
+     <tr>
+        <th>商品名</th>
+        <th>単価（税込)</th>
+        <th>数量</th> 
+        <th>小計</th>
+        <th></th>
+    </tr>
+     <% sum = 0 %>
         <% @cart_items.each do  |cart_item| %>
         <tr>
             <td><%= cart_item.item.name %></td>
@@ -24,20 +24,22 @@
         </tr>
         <% sum += cart_item.subtotal %>
         <% end %>
-    </table>
-    <div claas="row">
-        <div claas="col-3">
-         <%= link_to "買い物をつづける",items_path,class: "btn btn-primary" %>
-        </div>
-        <div claas="col-4">
-            <table claas="table">
-                <tr>
-                    <th>合計金額</th>
-                    <td>
-                   <%= sum %>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+   </table>
+   <div class ="row">
+       <div class="col-4 my-3">
+           <%= link_to "買い物を続ける",items_path,class: "btn btn-primary" %>
+       </div>
+       <div class="col-4 ml-auto my-3">
+         <table class="table table-bordered">
+       <tr>
+           <th>合計金額</th>
+           <td><%= sum %></td>
+       </tr>
+   </table>  
+       </div>
+   </div>
+   <div class="row">
+       <%= link_to ""
+   </div>
+   
 </div>

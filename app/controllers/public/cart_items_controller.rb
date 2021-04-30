@@ -3,7 +3,7 @@ class Public::CartItemsController < ApplicationController
         cart_items = CartItem.all
         is_exist = false
         id = 0
-        cart_items.each do |cart_item|
+        current_customer.cart_items.each do |cart_item|
             if cart_item.item_id == params[:cart_item][:item_id].to_i
                 is_exist = true
                 id = cart_item.id
