@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     resources :items
     delete "cart_items/destroy_all"=>"cart_items#destroy_all",as: "destroy_all"
     resources :cart_items
+    resources :orders
   end
 end
