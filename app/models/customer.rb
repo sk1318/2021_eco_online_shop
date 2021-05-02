@@ -12,6 +12,7 @@ class Customer < ApplicationRecord
   validates :telephone_number,presence: true
   
   has_many :cart_items,dependent: :destroy
+  has_many :addresses,dependent: :destroy
   def is_deleted?
     super && (self.is_deleted == true)
   end
