@@ -1,13 +1,13 @@
 class Public::CartItemsController < ApplicationController
     include CommonActions
     before_action :login_check
-    
+    before_action :amount_check,only: [:create]
     def create
         cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
         
         if cart_item
-            sum = cart_item.amount + params[:cart_item][:amount].to_i
-            if sum <=10
+            sum = cart_item.amount+ params[:cart_item][:amount].to_i
+            if sum <= 10
             cart_item.update(amount: sum)
             redirect_to cart_items_path
             else
@@ -56,6 +56,13 @@ class Public::CartItemsController < ApplicationController
     
     def cart_item_params
         params.require(:cart_item).permit(:amount,:item_id)
+    end
+    
+    def amount_check
+        unless params[:cart_item][:amount].to_i >=1 
+            flash[:error] = "個数を選択してください"
+            redirect_to item_path(params[:cart_item][:item_id])
+        end
     end
     
 end
