@@ -11,4 +11,3 @@ Item.create!(genre_id:1,name: "モンブラン",introduction: "おいしいで�
 Item.create!(genre_id:1,name: "ショートケーキ",introduction: "おいしいです",price: 200,image_id: "5d833624814b5a0afdc4ba3dcac5b33a1da8cf118a3ac4dd7393f13e3e1a")
 Item.create!(genre_id:1,name: "チョコレートケーキ",introduction: "おいしいです",price: 200,image_id: "5d833624814b5a0afdc4ba3dcac5b33a1da8cf118a3ac4dd7393f13e3e1a")
 Item.create!(genre_id:1,name: "イチゴケーキ",introduction: "おいしいです",price: 200,image_id: "5d833624814b5a0afdc4ba3dcac5b33a1da8cf118a3ac4dd7393f13e3e1a")
-

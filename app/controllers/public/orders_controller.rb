@@ -1,4 +1,10 @@
 class Public::OrdersController < ApplicationController
+    include CommonActions
+    before_action :login_check
+    before_action :carts_empty_check,except: :done
+    
+    def done
+    end
     
     def new
         @order = Order.new
@@ -53,4 +59,10 @@ class Public::OrdersController < ApplicationController
         params.require(:order).permit(:peyment_method,:zip_code,:address,:name,:amount_biled,:delivery_charge)
     end
     
+    
+    def carts_empty_check
+        if current_customer.cart_items.count == 0
+            redirect_to cart_items_path
+        end
+    end
 end

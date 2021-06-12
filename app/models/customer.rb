@@ -13,7 +13,7 @@ class Customer < ApplicationRecord
   
   has_many :cart_items,dependent: :destroy
   has_many :addresses,dependent: :destroy
-  has_many :orders,dependent: :destroy
+  has_many :orders
   
   def address_all
         "〒#{self.zip_code} #{self.address}  #{ self.last_name} #{self.first_name}"

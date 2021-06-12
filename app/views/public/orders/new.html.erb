@@ -2,7 +2,7 @@
     <big class="silver">注文情報入力</big>
         <%= form_with model: @order, url: confirm_path,local: true do |f| %>
         <h4>支払方法</h4>
-        <%= f.radio_button :peyment_method, :クレジットカード, checked: true %>クレジットカード<br>
+        <%= f.radio_button :peyment_method, :クレジットカード, checked: true %>クレジットカード
 　　　　<%= f.radio_button :peyment_method, :銀行振込, checked: true %>銀行振込<br>
 　　　　<h4>お届け先</h4>
         <%= f.radio_button :option,0 %>ご自身の住所<br>
