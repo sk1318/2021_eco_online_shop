@@ -13,7 +13,13 @@ class Customer < ApplicationRecord
   
   has_many :cart_items,dependent: :destroy
   has_many :addresses,dependent: :destroy
-  def is_deleted?
-    super && (self.is_deleted == true)
+  has_many :orders,dependent: :destroy
+  
+  def address_all
+        "〒#{self.zip_code} #{self.address}  #{ self.last_name} #{self.first_name}"
+  end
+  
+  def all_name
+    "#{self.last_name} #{self.first_name}"
   end
 end

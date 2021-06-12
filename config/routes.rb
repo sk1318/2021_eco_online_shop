@@ -8,7 +8,10 @@ Rails.application.routes.draw do
    resources :items
    resources :customers
    resources :genres
+   resources :orders
+   resources :order_details
   end
+  
    devise_for :admin, :controllers => {
     :registrations => 'admin/registrations',
     :sessions => 'admin/sessions'   
@@ -24,6 +27,8 @@ Rails.application.routes.draw do
     resources :items
     delete "cart_items/destroy_all"=>"cart_items#destroy_all",as: "destroy_all"
     resources :cart_items
+    post "orders/confirm"=>"orders#confirm",as: "confirm"
+    get "orders/done"=> "orders#done",as: "done"
     resources :orders
   end
 end

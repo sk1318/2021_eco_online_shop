@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   def reject_customer
     @customer = Customer.find_by(email: params[:customer][:email].downcase)
     if @customer
-      if  @customer.is_deleted? == true
+      if  @customer.is_deleted
         flash[:error] = "退会済みです。"
         redirect_to new_customer_session_path
       end
