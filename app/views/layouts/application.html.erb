@@ -11,8 +11,8 @@
   
  <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
+      <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
             <% if customer_signed_in? %>
             <a class="navbar-brand p-3" href="/">Customerトップページ</a>
             <% elsif admin_signed_in? %>
@@ -54,10 +54,9 @@
             </li>           <li class="nav-item">
               <%= link_to "ログアウト",destroy_admin_session_path ,class: 'nav-link text-dark',method: :delete %>
             </li>
-            
             <% else %>
             <li class="nav-item">
-              <a class="nav-link text-dark">About</a>
+              <%= link_to "About",about_path,class: 'nav-link text-dark'%>
             </li>
             <li class="nav-item">
               <%= link_to "商品一覧",items_path,class: 'nav-link text-dark'%>
@@ -71,8 +70,20 @@
           <% end %>
             </ul>
           </div>
-        </div>
       </nav>
+      <% if admin_signed_in? %>
+      <div class="row">
+        <div class="ml-auto mx-3 my-2">
+          <%= form_with url: admin_items_path , method: :get, local: true do |f| %>
+          <%= f.text_field :search, placeholder: "商品名を検索" %>
+          <%= f.button type: "submit" do %>
+          <i class="fas fa-search-plus"></i>
+        　<% end %>
+          <% end %>
+      </div>
+      </div>
+      <% end %>
+      </div>
     </header>
     <% flash.each do |type,message| %>
     <p class="<%= type %>"><%= message %></p>

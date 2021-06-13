@@ -3,5 +3,6 @@ class Admin::HomesController < ApplicationController
     
   before_action :admin_check
     def top
+      @admins = Admin.all
     end
 end

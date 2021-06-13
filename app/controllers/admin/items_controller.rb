@@ -11,7 +11,12 @@ class Admin::ItemsController < ApplicationController
         redirect_to admin_item_path(@item)
     end
     def index
+        if params[:search]
+        @items = Item.where('name LIKE ?', "%#{params[:search]}%") 
+        else
         @items = Item.all
+        end
+        
     end
     
     
