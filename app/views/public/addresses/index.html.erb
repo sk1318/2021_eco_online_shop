@@ -1,0 +1,46 @@
+<div class="container">
+    <big class="silver">一覧・追加</big>
+    <%= form_with model: @address,local: true do |f| %>
+    <div class="row my-3">
+        <div class="col-3">
+          郵便番号(ハイフンなし)
+        </div>
+        <div class="col-9">
+         <%= f.text_field :zip_code,placeholder: "000-0000" %>
+        </div>
+    </div>
+    <div class="row my-3">
+         <div class="col-3">
+          住所
+        </div>
+        <div class="col-9">
+         <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0" %>
+        </div>
+    </div>
+    <div class="row my-3">
+         <div class="col-3">
+          宛名
+        </div>
+        <div class="col-9">
+         <%= f.text_field :name,placeholder: "令和道子" %>
+        </div>
+    </div>
+    
+    <% end %>
+    <div class="col-7">
+        
+    <table class="table">
+        <tr>
+            <td>ジャンル</td>
+            <td></td>
+        </tr>
+        <% @addresses.each do |address| %>
+        <tr>
+            <td><%= address.address %></td>
+            <td><%= link_to "編集する",edit_address_path(address),class: "btn btn-success" %></td>
+        </tr>
+        
+        <% end %>
+    </div>
+    </table>
+</div>

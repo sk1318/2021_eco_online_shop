@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     post "orders/confirm"=>"orders#confirm",as: "confirm"
     get "orders/done"=> "orders#done",as: "done"
     resources :orders
+    resources :addresses
   end
 end
