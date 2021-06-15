@@ -13,4 +13,4 @@ Item.create!(genre_id:1,name: "モンブラン",introduction: "おいしいで�
 Item.create!(genre_id:1,name: "ショートケーキ",introduction: "おいしいです",price: 200,image: File.open("./app/assets/images/s.png"))
 Item.create!(genre_id:1,name: "チョコレートケーキ",introduction: "おいしいです",price: 200,image: File.open("./app/assets/images/s.png"))
 Item.create!(genre_id:1,name: "イチゴケーキ",introduction: "おいしいです",price: 200,image: File.open("./app/assets/images/s.png"))
-Address.create!(customer_id: 1,zip_code:197-4437,address: "東京都新宿区４－５",name: "鈴木正久")
+Address.create!(customer_id: 1,zip_code: "197-4437",address: "東京都新宿区４－５",name: "鈴木正久")

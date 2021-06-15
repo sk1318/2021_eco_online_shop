@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
     include CommonActions
-    
   before_action :admin_check
+  
     def index
         @orders = Order.all
     end
@@ -18,7 +18,7 @@ class Admin::OrdersController < ApplicationController
         @order.save
         
        if @order.status_before_type_cast == 1
-           @order.order_details.update_all(production_status: "製作待ち")
+           @order.order_details.update_all(production_status: 1)
        end
         redirect_to admin_order_path(@order)
     end

@@ -1,7 +1,11 @@
 class Public::OrdersController < ApplicationController
     include CommonActions
     before_action :login_check
-    before_action :carts_empty_check,except: :done
+    before_action :carts_empty_check,except: [:done,:index]
+    
+    def index
+        @orders = current_customer.orders.all
+    end
     
     def done
     end

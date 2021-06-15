@@ -1,43 +1,45 @@
 <div class="container">
-    <big class="silver">一覧・追加</big>
+    <big class="silver">配送先登録/一覧</big>
     <%= form_with model: @address,local: true do |f| %>
     <div class="row my-3">
         <div class="col-3">
           郵便番号(ハイフンなし)
         </div>
-        <div class="col-9">
-         <%= f.text_field :zip_code,placeholder: "000-0000" %>
-        </div>
+         <%= f.text_field :zip_code,placeholder: "0000000",class: "col-2" %>
     </div>
     <div class="row my-3">
          <div class="col-3">
           住所
         </div>
-        <div class="col-9">
-         <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0" %>
-        </div>
+         <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0",class: "col-5" %>
     </div>
     <div class="row my-3">
          <div class="col-3">
           宛名
         </div>
-        <div class="col-9">
-         <%= f.text_field :name,placeholder: "令和道子" %>
-        </div>
+         <%= f.text_field :name,placeholder: "令和道子",class: "col-2" %>
+         <%= f.submit "新規登録",class: "btn  btn-success offset-3"%>
     </div>
     
     <% end %>
     <div class="col-7">
         
-    <table class="table">
+    <table class="table table-bordered">
         <tr>
-            <td>ジャンル</td>
-            <td></td>
+            <th>郵便番号</th>
+            <th>住所</th>
+            <th>宛名</th>
+            <th></th>
         </tr>
         <% @addresses.each do |address| %>
         <tr>
+            <td><%= address.zip_code %></td>
             <td><%= address.address %></td>
-            <td><%= link_to "編集する",edit_address_path(address),class: "btn btn-success" %></td>
+            <td><%= address.name %></td>
+            <td>
+                <%= link_to "編集する",edit_address_path(address),class: "btn btn-success mx-3" %>
+                <%= link_to "削除する",address_path(address),class: "btn btn-danger",method: :delete%>
+            </td>
         </tr>
         
         <% end %>

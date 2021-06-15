@@ -12,4 +12,8 @@ class Order < ApplicationRecord
        end
        return total
     end
+    
+    def address_all
+        "〒#{self.zip_code} #{self.address}  #{ self.name}"
+    end
 end

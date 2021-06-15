@@ -5,11 +5,11 @@ class Admin::OrderDetailsController < ApplicationController
         @order_detail.save
         
         if @order_detail.production_status_before_type_cast == 2
-            @order_detail.order.update(status: "製作中") 
+            @order_detail.order.update(status: 2) 
         end
         
         if @order_detail.order.order_details.all?{|order_detail| order_detail.production_status_before_type_cast== 3}
-            @order_detail.order.update(status: "発送準備中") 
+            @order_detail.order.update(status: 3) 
         end
         
         flash[:notice] = "変更を保存しました"
