@@ -16,4 +16,14 @@ class Order < ApplicationRecord
     def address_all
         "〒#{self.zip_code} #{self.address}  #{ self.name}"
     end
+    
+    def total_merchandise
+        total_merchandise = 0
+        self.order_details.each  do |order_detail|
+           subtotal =  order_detail.price*order_detail.amount
+           total_merchandise += subtotal
+        end
+        return total_merchandise
+        
+    end
 end

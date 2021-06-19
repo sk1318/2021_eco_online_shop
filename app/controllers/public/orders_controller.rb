@@ -1,10 +1,14 @@
 class Public::OrdersController < ApplicationController
     include CommonActions
     before_action :login_check
-    before_action :carts_empty_check,except: [:done,:index]
+    before_action :carts_empty_check,except: [:done,:index,:show]
     
     def index
         @orders = current_customer.orders.all
+    end
+    
+    def show
+        @order = Order.find(params[:id])
     end
     
     def done
