@@ -1,6 +1,5 @@
-class Public::CartItemsController < ApplicationController
-    include CommonActions
-    before_action :login_check
+class Public::CartItemsController < Public::ApplicationController
+
     before_action :amount_check,only: [:create]
     def create
         cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])

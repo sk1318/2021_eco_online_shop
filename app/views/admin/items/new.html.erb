@@ -1,45 +1,4 @@
 <div class="container">
-    <big class="silver">商品新規登録</big>
-    <%= form_with model: @item,url: "/admin/items",local: true do |f|%>
-    <div class="row my-3">
-        <div class="col-3">商品画像</div>
-        <div class="col-3">
-            <%= f.attachment_field :image %>
-        </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-3">商品名</div>
-        <div class="col-3">
-            <%= f.text_field :name,placeholder: "商品名",class: "form-control" %>
-        </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-3">商品説明</div>
-        <div class="col-3">
-            <%= f.text_area :introduction,placeholder: "商品説明",class: "form-control"%>
-        </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-3">ジャンル</div>
-        <div class="col-3">
-        <%= f.collection_select :genre_id, Genre.all, :id, :name %>　　　
-        </div>
-    </div>
-     <div class="row my-3">
-        <div class="col-3">税抜価格</div>
-        <div class="col-3">
-        <%= f.text_field :price,placeholder: "1000",class: "form-control" %>
-        </div>
-    </div>
-     <div class="row my-3">
-        <div class="col-3">販売ステータス</div>
-        <div class="col-3">
-        <%= f.radio_button :is_active,true %>
-        <%= f.label "販売中"%>
-        <%= f.radio_button :is_active,false  %>  
-        <%= f.label "販売停止中"%>
-        <%= f.submit "新規登録",class: "btn btn-block btn-success" %>
-        </div>
-    </div>
-    <% end %>
+<big class="silver">商品新規登録</big>
+<%= render 'template',item: @item,admin: current_admin %>
 </div>

@@ -1,7 +1,5 @@
-class Public::ItemsController < ApplicationController
-    include CommonActions
-    before_action :login_check,only: [:show]
-    
+class Public::ItemsController < Public::ApplicationController
+    skip_before_action :authenticate_customer!,only: :index
     def index
         @items = Item.all
     end

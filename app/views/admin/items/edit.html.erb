@@ -1,7 +1,4 @@
 <div class="container">
-    <h1>image</h1>
-    <%= form_with model: @item,url: admin_item_path(@item),method: :patch,local: true do |f| %>
-    <%= f.attachment_field :image %>
-    <%= f.submit "保存"%>
-    <% end %>
+<big class="silver">商品編集</big>
+<%= render 'template',item: @item,admin: current_admin %>
 </div>

@@ -8,17 +8,12 @@ module CommonActions
         end
   end
   
-  def login_check
-        unless customer_signed_in?
-            redirect_to new_customer_session_path
-        end
-   end
     
-    def current_customer?
-      customer = Customer.find(params[:id])
-      unless customer == current_customer
-          redirect_to mypage_path
-      end
+  def current_customer?
+    customer = Customer.find(params[:id])
+    unless customer == current_customer
+        redirect_to mypage_path
     end
+  end
 
 end

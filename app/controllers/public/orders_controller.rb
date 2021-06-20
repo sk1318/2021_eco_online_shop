@@ -1,6 +1,5 @@
-class Public::OrdersController < ApplicationController
+class Public::OrdersController < Public::ApplicationController
     include CommonActions
-    before_action :login_check
     before_action :carts_empty_check,except: [:done,:index,:show]
     
     def index

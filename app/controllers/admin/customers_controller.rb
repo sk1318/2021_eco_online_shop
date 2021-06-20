@@ -1,8 +1,4 @@
-class Admin::CustomersController < ApplicationController
-    include CommonActions
-
-    before_action :admin_check
-    
+class Admin::CustomersController < Admin::ApplicationController
     
     def index
         @customers = Customer.all

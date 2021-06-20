@@ -1,6 +1,5 @@
-class Public::CustomersController < ApplicationController
+class Public::CustomersController < Public::ApplicationController
     include CommonActions
-    before_action :login_check
     before_action :current_customer?,only: [:edit,:update]
     
     def show

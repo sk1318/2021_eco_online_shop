@@ -4,7 +4,6 @@ Rails.application.routes.draw do
    get "about"=> "public/homes#about",as: "about"
    get "admin"=>"admin/homes#top",as: "admin_top"
    
-   
   namespace :admin do
    resources :items
    resources :customers

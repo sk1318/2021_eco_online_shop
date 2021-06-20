@@ -1,7 +1,4 @@
-class Admin::OrdersController < ApplicationController
-    include CommonActions
-  before_action :admin_check
-  
+class Admin::OrdersController < Admin::ApplicationController
     def index
         @orders = Order.all
     end
