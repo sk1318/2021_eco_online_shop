@@ -4,6 +4,15 @@ class Order < ApplicationRecord
     belongs_to :customer
     has_many :order_details
     
+    with_options presence: true do
+    validates :delivery_charge
+    validates :peyment_method
+    validates :amount_biled
+    validates :zip_code
+    validates :address
+    validates :name
+    end
+    
     def amount_all
        @order_details = OrderDetail.where(order_id: self.id)
        total = 0

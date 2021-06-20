@@ -1,15 +1,15 @@
 class Admin::OrdersController < Admin::ApplicationController
+    before_action :set_order,only: [:show,:update]
+    
     def index
         @orders = Order.all
     end
     
     def show
-        @order = Order.find(params[:id])
         @admin = current_admin
     end
     
     def update
-        @order = Order.find(params[:id])
         @order.update(order_params)
         flash[:notice] = "変更を保存しました"
         @order.save
@@ -25,5 +25,9 @@ class Admin::OrdersController < Admin::ApplicationController
     
     def order_params
         params.require(:order).permit(:status)
+    end
+    
+    def set_order
+       @order = Order.find(params[:id])
     end
 end

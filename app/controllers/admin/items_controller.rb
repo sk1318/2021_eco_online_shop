@@ -1,5 +1,6 @@
 class Admin::ItemsController < Admin::ApplicationController
     before_action :set_item,only: [:show,:edit,:updte]
+    
     def new
         @item = Item.new
     end
@@ -9,7 +10,7 @@ class Admin::ItemsController < Admin::ApplicationController
         if @item.save
         redirect_to admin_item_path(@item)
         else
-            render :new
+        render :new
         end
     end
     def index
@@ -34,7 +35,7 @@ class Admin::ItemsController < Admin::ApplicationController
         if @item.update(item_params)
         redirect_to admin_items_path
         else
-            render :edit
+        render :edit
         end
     end
     private
