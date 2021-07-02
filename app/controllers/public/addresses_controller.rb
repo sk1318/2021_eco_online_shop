@@ -53,7 +53,7 @@ class Public::AddressesController < Public::ApplicationController
     private
     
     def address_params
-        params.require(:address).permit(:zip_code,:name)
+        params.require(:address).permit(:zip_code,:name,:address)
     end
     
     def address_edit_check

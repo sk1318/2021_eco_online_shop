@@ -1,0 +1,47 @@
+    <big class="silver"><%= @customer.all_name%>さんの会員詳細</big>
+    <table class="table table-bordered my-3">
+        <tr>
+            <th>会員ID</th>
+            <td><%= @customer.id %></td>
+        </tr>
+        <tr>
+            <th>氏名</th>
+            <td><%= @customer.all_name %></td>
+        </tr>
+        <tr>
+            <th>フリガナ</th>
+            <td><%= @customer.all_kana %></td>
+        </tr>
+        <tr>
+            <th>郵便番号</th>
+            <td><%= @customer.zip_code%></td>
+        </tr>
+        <tr>
+            <th>住所</th>
+            <td><%= @customer.address_all %></td>
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td><%= @customer.telephone_number %></td>
+        </tr>
+        <tr>
+            <th>会員ID</th>
+            <td><%= @customer.email %></td>
+        </tr>
+        <tr>
+            <th>ステータス</th>
+            <% if @customer.is_deleted %>
+            <td class="error">無効</td>
+            <% else %>
+            <td class="notice">有効</td>
+            <% end %>
+        </tr>
+    </table>
+    <div class="row">
+        <div class="col-6">
+            <%= link_to "編集する",edit_admin_customer_path(@customer),class: "btn btn-block btn-success"%>
+        </div>
+        <div class="col-6">
+            <%= link_to "注文履歴一覧を見る",admin_orders_path,class: "btn btn-block btn-info"%>
+        </div>
+    </div>

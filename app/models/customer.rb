@@ -25,4 +25,8 @@ class Customer < ApplicationRecord
   def all_name
     "#{self.last_name} #{self.first_name}"
   end
+  
+  def all_kana
+    "#{self.last_name_kana} #{self.first_name_kana}"
+  end
 end

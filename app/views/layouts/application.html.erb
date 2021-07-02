@@ -85,14 +85,15 @@
       <% end %>
       </div>
     </header>
-    <% flash.each do |type,message| %>
+    <main class="mb-auto">
+    <div class="container">
+      <% flash.each do |type,message| %>
     <p class="<%= type %>"><%= message %></p>
     <% end %>
-    <main class="mb-auto">
     <%= yield %>
+    </div>
     </main>
     <footer class="bg-dark text-white pt-5 pb-4">
-  
     </footer>
   </body>
 </html>

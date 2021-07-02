@@ -1,7 +1,6 @@
-<div class="container">
-    <big class="silver">配送先登録/一覧</big>
+    <big class="silver">配送先登録/一覧</big><br>
     <%= form_with url: addresses_path, method: :get, local: true do |f| %>
-        <%= f.text_field :postal_code, class: "col-2", placeholder: "郵便番号を入力" %>
+        <%= f.text_field :postal_code, class: "col-2", placeholder: "郵便番号で検索" %>
         <%= f.button type: "submit" do %>
           <i class="fas fa-search-plus"></i>
       　<% end %>
@@ -59,4 +58,3 @@
         <% end %>
     </div>
     </table>
-</div>

@@ -1,14 +1,13 @@
-<div class="container">
     <big class="silver">注文情報入力</big>
         <%= form_with model: @order, url: confirm_path,local: true do |f| %>
         <h4>支払方法</h4>
         <%= f.radio_button :peyment_method, :クレジットカード, checked: true %>クレジットカード
-　　　　<%= f.radio_button :peyment_method, :銀行振込, checked: true %>銀行振込<br>
+　　　　<%= f.radio_button :peyment_method, :銀行振込 %>銀行振込<br>
 　　　　<h4>お届け先</h4>
-        <%= f.radio_button :option,0 %>ご自身の住所<br>
+        <%= f.radio_button :option,0,checked: true %>ご自身の住所<br>
         <%= current_customer.address_all %><br>
         <%= f.radio_button :option,1 %>登録済み住所から選択<br>
-        <%= f.collection_select :option_address, Address.all, :id, :address_all,include_blank: "選択して下さい"%><br>
+        <%= f.collection_select :option_address, Address.all, :id, :address_all%><br>
         <%= f.radio_button :option,2 %>新しいお届け先<br>
         <div class="row">
             <div class="col-3">
@@ -35,6 +34,5 @@
             </div>
         </div>
         
-        <%= f.submit '確認画面へ進む' %>
+        <%= f.submit '確認画面へ進む',class: "btn btn-success my-3"%>
         <% end %>
-</div>

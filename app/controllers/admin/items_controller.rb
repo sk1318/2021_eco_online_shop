@@ -1,5 +1,5 @@
 class Admin::ItemsController < Admin::ApplicationController
-    before_action :set_item,only: [:show,:edit,:updte]
+    before_action :set_item,only: [:show,:edit,:update]
     
     def new
         @item = Item.new

@@ -44,18 +44,25 @@ class Public::OrdersController < Public::ApplicationController
            @name = "#{current_customer.last_name} #{current_customer.first_name}"
            
         elsif params[:order][:option] == "1"
-            address = Address.find(params[:order][:option_address])
+           address = Address.find_by(id: params[:order][:option_address])
+           if address
            @address_all = address.address_all
            @zip_code = address.zip_code
            @address = address.address
            @name = address.name
+           else
+              render :new
+           end
            
         elsif params[:order][:option] == "2"
+            if params[:order][:zip_code].empty? || params[:order][:address].empty? || params[:order][:name].empty?
+                render :new
+            else
             @address_all = "#{params[:order][:zip_code]} #{params[:order][:address]} #{params[:order][:name]}" 
             @zip_code = params[:order][:zip_code]
             @address = params[:order][:address]
             @name = params[:order][:name]
-            
+            end
         end
     end
     
