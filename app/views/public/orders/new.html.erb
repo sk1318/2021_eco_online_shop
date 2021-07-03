@@ -10,26 +10,26 @@
         <%= f.collection_select :option_address, Address.all, :id, :address_all%><br>
         <%= f.radio_button :option,2 %>新しいお届け先<br>
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
                 郵便番号(ハイフンなし)
             </div>
-            <div class="col-5">
+            <div class="col-md-5">
                 <%= f.text_field :zip_code ,placeholder: "0000000"%>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
                 住所
             </div>
-            <div class="col-5">
+            <div class="col-md-5">
                 <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0" %>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
                 宛名
             </div>
-            <div class="col-5">
+            <div class="col-md-5">
                 <%= f.text_field :name,placeholder: "令和道子"%>
             </div>
         </div>

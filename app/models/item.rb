@@ -8,6 +8,5 @@ class Item < ApplicationRecord
     validates :name
     validates :introduction
     validates :price
-    validates :image_id,presence: true
     end
 end

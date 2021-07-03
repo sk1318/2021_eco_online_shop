@@ -1,5 +1,5 @@
     <div class="row my-3">
-        <div class="col-3 offset-3">
+        <div class="col-lg-3 offset-3">
             <%= attachment_image_tag @item, :image, format: 'jpeg',size: "200x100" %><br>
             <% if @item.is_active %>
             <div class="my-3 mx-auto">
@@ -11,7 +11,7 @@
            </div>
             <% end %>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3">
             <%= @item.name %><br>
             <%= @item.introduction %><br>
             ￥<%= (@item.price*1.1).floor %>(税込み)<br>

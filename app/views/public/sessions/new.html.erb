@@ -1,61 +1,43 @@
   <big class="silver px-3">ログイン</big><br><br>
-  <big class="silver px-3">会員の方はこちらからログイン  </big><br><br>
  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
- <div class="row my-3">
-   <div class="col-6 offset-3">
      <div class="row">
-      <div class="col-3">
+      <div class="col-md-3">
        <span>メールアドレス</span>
      </div>
-     <div class="col-9">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control" %>
+     <div class="col-md-6">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control my-3" %>
      </div>
     </div>
-  </div>
-  </div>
  
-  
-  <div class="row">
-   <div class="col-6 offset-3">
      <div class="row">
-      <div class="col-3">
+      <div class="col-md-3">
        <span>パスワード</span>
      </div>
-     <div class="col-9">
-    <%= f.password_field :password, autocomplete: "current-password",class: "form-control" %>
+     <div class="col-md-6">
+    <%= f.password_field :password, autocomplete: "current-password",class: "form-control my-3" %>
      </div>
     </div>
-  </div>
-  </div>
   
-   <div class="row">
-    <div class="col-6 offset-3">
+   
       <div class="row">
-        <div class="offset-3">
+        <div class="col-md-6  mx-auto">
            <% if devise_mapping.rememberable? %>
           <div class="field">
-            <%= f.check_box :remember_me ,class: "mx-3" %>
+            <%= f.check_box :remember_me ,class: "mx-auto" %>
             <%= f.label :remember_me %>
           </div>
            <% end %>
         </div>
       </div>
-      
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-6 offset-3">
-      <div class="row">
-        <div class="offset-3">
-           <%= f.submit "ログイン" ,class:"btn btn-primary btn-block mx-3"%>
-        </div>
+   
+      <div class="row my-3">
+       <div class="col-md-6  mx-auto">
+           <%= f.submit "ログイン" ,class:"btn btn-primary btn-block"%>
+       </div>
       </div>
-    </div>
-  </div>
 <% end %>
 
-  <big class="silver px-3">会員登録がお済みではない方</big><br><br>
+ <big class="silver px-3 ">会員登録がお済みではない方</big><br><br>
 <%= render "public/shared/links" %>から新規登録を行ってください。
 
 

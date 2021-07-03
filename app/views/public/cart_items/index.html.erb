@@ -1,9 +1,10 @@
-    <big class="silver">ショッピングカート</big>
+    <big class="silver">ショッピングカート</big><br>
     <div class="row">
-    <div class="col-3 ml-auto">
+    <div class="col-md-3 ml-auto my-3">
       <%= link_to "カートを空にする",destroy_all_path,class: "btn btn-danger btn-block",method: :delete ,data: {confirm: "空にしますか？"} %>
     </div> 
     </div>
+    <div class="table-responsive">
     <table class="table table-bordered my-3">
      <tr>
         <th>商品名</th>
@@ -29,21 +30,22 @@
         <% sum += cart_item.subtotal %>
         <% end %>
    </table>
+   </div>
    <div class ="row">
-       <div class="col-4 my-3">
+       <div class="col-md-4 my-3">
            <%= link_to "買い物を続ける",items_path,class: "btn btn-primary" %>
        </div>
-       <div class="col-4 ml-auto my-3">
-         <table class="table table-bordered">
+       <div class="col-md-4 ml-auto my-3">
+       <table class="table table-bordered">
        <tr>
            <th>合計金額</th>
            <td><%= sum %></td>
        </tr>
-   </table>  
+       </table>  
        </div>
-   </div>
+   </div> 
    <div class="row">
-       <div class="col-3 mx-auto">
+       <div class="col-md-3 mx-auto my-3">
        <%= link_to "情報入力に進む",new_order_path,class: "btn btn-success btn-block" %>
        </div>
    </div>
