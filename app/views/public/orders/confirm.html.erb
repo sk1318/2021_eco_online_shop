@@ -30,7 +30,7 @@
          <table class="table table-bordered">
            <tr>
                <th>送料</th>
-               <td>800</td>
+               <td><%= @shipping_cost %></td>
            </tr>
            <tr>
                <th>商品合計</th>
@@ -38,8 +38,8 @@
            </tr>
            <tr>
                <th>請求金額</th>
-               <% @total = sum + 800 %>
-               <td><%= @total %></td>
+               <% total = sum + @shipping_cost  %>
+               <td><%= total %></td>
            </tr>
          </table>  
        </div>
@@ -51,8 +51,8 @@
             <%= f.hidden_field :zip_code,value: @zip_code %>
             <%= f.hidden_field :address,value: @address %>
             <%= f.hidden_field :name,value: @name %>
-            <%= f.hidden_field :amount_biled,value: @total %>
-            <%= f.hidden_field :delivery_charge,value:800 %>
+            <%= f.hidden_field :amount_biled,value: total %>
+            <%= f.hidden_field :delivery_charge,value: @shipping_cost %>
     	    <%= f.submit "注文を確定する",class: "btn btn-success my-3 btn-block",method: :post %>
 		<% end %>
         </div>

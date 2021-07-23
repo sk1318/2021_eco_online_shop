@@ -1,22 +1,22 @@
 class Public::OrdersController < Public::ApplicationController
     include CommonActions
     before_action :carts_empty_check,except: [:done,:index,:show]
-    
+
     def index
         @orders = current_customer.orders.all
     end
-    
+
     def show
         @order = Order.find(params[:id])
     end
-    
+
     def done
     end
-    
+
     def new
         @order = Order.new
     end
-    
+
     def create
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
@@ -32,17 +32,19 @@ class Public::OrdersController < Public::ApplicationController
       current_customer.cart_items.destroy_all #カートの中身を削除
       redirect_to done_path
     end
-    
+
     def confirm
         @order = Order.new
         @cart_items = current_customer.cart_items
         @peyment_method = params[:order][:peyment_method]
+        @shipping_cost = 800
+        
         if  params[:order][:option] == "0"
            @address_all =  current_customer.address_all
            @zip_code = current_customer.zip_code
            @address = current_customer.address
            @name = "#{current_customer.last_name} #{current_customer.first_name}"
-           
+
         elsif params[:order][:option] == "1"
            address = Address.find_by(id: params[:order][:option_address])
            if address
@@ -53,27 +55,34 @@ class Public::OrdersController < Public::ApplicationController
            else
               render :new
            end
-           
-        elsif params[:order][:option] == "2"
+
+        elsif   params[:order][:option] == "2"
+           @address_all = "中央大学（白門祭実行委員会で管理）"
+           @zip_code = "192-0393"
+           @address = "東京都八王子市東中野 742-1"
+           @name = "白門祭実行委員会"
+           @shipping_cost = 0
+
+        elsif params[:order][:option] == "3"
             if params[:order][:zip_code].empty? || params[:order][:address].empty? || params[:order][:name].empty?
                 render :new
             else
-            @address_all = "#{params[:order][:zip_code]} #{params[:order][:address]} #{params[:order][:name]}" 
+            @address_all = "#{params[:order][:zip_code]} #{params[:order][:address]} #{params[:order][:name]}"
             @zip_code = params[:order][:zip_code]
             @address = params[:order][:address]
             @name = params[:order][:name]
             end
         end
     end
-    
-    
+
+
     private
-    
+
     def order_params
         params.require(:order).permit(:peyment_method,:zip_code,:address,:name,:amount_biled,:delivery_charge)
     end
-    
-    
+
+
     def carts_empty_check
         if current_customer.cart_items.count == 0
             redirect_to cart_items_path

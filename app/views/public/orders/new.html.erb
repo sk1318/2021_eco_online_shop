@@ -8,7 +8,8 @@
         <%= current_customer.address_all %><br>
         <%= f.radio_button :option,1 %>登録済み住所から選択<br>
         <%= f.collection_select :option_address, Address.all, :id, :address_all%><br>
-        <%= f.radio_button :option,2 %>新しいお届け先<br>
+        <%= f.radio_button :option,2 %>大学へ送付（白門祭実行委員会で管理）<br>
+        <%= f.radio_button :option,3 %>新しいお届け先<br>
         <div class="row">
             <div class="col-md-3">
                 郵便番号(ハイフンなし)
@@ -33,6 +34,5 @@
                 <%= f.text_field :name,placeholder: "令和道子"%>
             </div>
         </div>
-        
         <%= f.submit '確認画面へ進む',class: "btn btn-success my-3"%>
         <% end %>

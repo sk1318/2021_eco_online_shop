@@ -3,7 +3,7 @@
             <%= attachment_image_tag @item, :image, format: 'jpeg',size: "200x100" %><br>
             <% if @item.is_active %>
             <div class="my-3 mx-auto">
-           <button type="button" class="btn btn-success mx-auto">販売中</button>
+           <button type="button" class="btn btn-info mx-auto">販売中</button>
            </div>
             <% else %>
             <div class="my-3 mx-auto">
@@ -19,7 +19,7 @@
             <%= form_with model: @cart_item ,url: cart_items_path,local: true do |f| %>
             <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択",class: "form-select" %>
             <%= f.text_field :item_id,value: @item.id,type: "hidden" %>
-            <%= f.submit "カートに入れる",class: "btn btn-success btn-block my-3" %>
+            <%= f.submit "カートに入れる",class: "btn btn-info btn-block my-3" %>
             <% end %>
             <% end %>
         </div>
