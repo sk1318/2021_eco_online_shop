@@ -8,15 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
  <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-dark bg-success">
          <div class="container">
            <% if admin_signed_in? %>
-              <%= link_to admin_top_path,class:"navbar-brand p-3" do %>
-              <i class="fas fa-home">Top</i>
-              <% end %>
+              <%= link_to admin_customers_path ,class:"nav-link text-light" do%>
+              <i class="fas fa-user-friends">会員一覧</i>
+            <% end %>
            <% else %>
              <%= link_to root_path,class:"navbar-brand p-3" do %>
              <i class="fas fa-home">Top</i>
@@ -48,28 +48,23 @@
               <i class="fas fa-sign-out-alt">ログアウト</i>
               <% end %>
             </li>
-            
+
              <% elsif admin_signed_in? %>
+             <li class="nav-item">
+            <%= link_to admin_orders_path,class: "nav-link text-light" do %>
+            <i class="far fa-credit-card">注文履歴一覧</i>
+            <% end %>
+            </li>
              <li class="nav-item">
             <%= link_to admin_items_path ,class:"nav-link text-light" do %>
             <i class="fas fa-book-open">商品一覧</i>
-            <% end %>
-            </li>            
-            <li class="nav-item">
-            <%= link_to admin_customers_path ,class:"nav-link text-light" do%>
-            <i class="fas fa-user-friends">会員一覧</i>
-            <% end %>
-            </li>
-            <li class="nav-item">
-            <%= link_to admin_orders_path,class: "nav-link text-light" do %>
-            <i class="far fa-credit-card">注文履歴一覧</i>
             <% end %>
             </li>
             <li class="nav-item">
             <%= link_to admin_genres_path,class: "nav-link text-light" do %>
             <i class="fas fa-folder">ジャンル一覧</i>
             <% end %>
-            </li>          
+            </li>
             <li class="nav-item">
               <%= link_to destroy_admin_session_path,class: 'nav-link text-light',method: :delete do %>
               <i class="fas fa-sign-out-alt">ログアウト</i>
