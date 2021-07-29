@@ -1,7 +1,7 @@
     <big class="silver">商品詳細</big>
     <div class="row my-3">
         <div class="col-md-2">
-            <%= attachment_image_tag @item, :image, format: 'jpeg',size: "100x100" %>
+        <%= image_tag @item.image.variant(resize:'200x100') if @item.image.attached? %>
         </div>
         <div class="col-md-10">
         <table class="table">

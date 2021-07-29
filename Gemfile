@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
+gem 'image_processing',           '1.9.3'
+gem 'mini_magick',                '4.9.5'
 gem 'aws-sdk-s3',              '1.48', require: false
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server

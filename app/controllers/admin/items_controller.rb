@@ -7,6 +7,7 @@ class Admin::ItemsController < Admin::ApplicationController
     
     def create
         @item = Item.new(item_params)
+        @item.image.attach(params[:item][:image])
         if @item.save
         redirect_to admin_item_path(@item)
         else
