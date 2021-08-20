@@ -1,17 +1,14 @@
 class Public::CustomersController < Public::ApplicationController
-    include CommonActions
-    before_action :current_customer?,only: [:edit,:update]
-    
     def show
     @customer = current_customer
     end
     
     def edit 
-    @customer = Customer.find(params[:id])
+    @customer = current_customer
     end
     
     def update
-    @customer = Customer.find(params[:id])
+    @customer = current_customer
         if @customer.update(customer_params)
             redirect_to mypage_path
         else

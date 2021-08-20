@@ -19,11 +19,12 @@ Rails.application.routes.draw do
   
   
   scope module: :public do
-    devise_for :customers
     get "customers/mypage"=> "customers#show",as: "mypage"
+    get "customers/edit"=>"customers#edit",as: "edit_customer"
+    patch "customers"=>"customers#update"
     patch "costomers/withdraw"=>"customers#withdraw",as: "withdraw"    
     get "customers/cancellation"=>"customers#cancellation",as: "cancellation"
-    resources :customers
+    devise_for :customers
     resources :items
     delete "cart_items/destroy_all"=>"cart_items#destroy_all",as: "destroy_all"
     resources :cart_items
