@@ -23,14 +23,16 @@ class Public::AddressesController < Public::ApplicationController
     end
     
     def create
-        @address = Address.new(address_params)
+        @addresses = current_customer.addresses
+        @address = Address.new
         @address.customer_id = current_customer.id
         @address.address = "#{params[:address][:address_first]}#{params[:address][:address_last]}"
+        @address.zip_code = params[:address][:address_zip_code]
+        @address.name = params[:address][:address_name]
         if @address.save
         redirect_to addresses_path
         else
-        flash[:error]="登録できません"
-        redirect_to addresses_path
+        render :index
         end
     end
     
@@ -38,11 +40,11 @@ class Public::AddressesController < Public::ApplicationController
     end
     
     def update
-        if @address.update(address_params)
+       if @address.update(address_params)
         redirect_to addresses_path
-        else
-        redirect_to edit_address_path(@address)
-        end
+       else
+        redirect_to edit_address_path
+       end
     end
     
     def destroy
@@ -55,7 +57,6 @@ class Public::AddressesController < Public::ApplicationController
     def address_params
         params.require(:address).permit(:zip_code,:name,:address)
     end
-    
     def address_edit_check
         address = Address.find(params[:id])
         unless address.customer == current_customer

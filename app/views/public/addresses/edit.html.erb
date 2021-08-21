@@ -1,22 +1,29 @@
     <big class="silver">配送先登録/一覧</big>
+    <% if @address.errors.any? %>
+    <ul class="error">
+     <% @address.errors.full_messages.each do |error| %>
+     <li class="error"><%= error %></li>
+     <% end %>
+    </ul>
+    <% end %>
     <%= form_with model: @address,local: true do |f| %>
     <div class="row my-3">
         <div class="col-md-3">
           郵便番号(ハイフンなし)
         </div>
-         <%= f.text_field :zip_code,placeholder: "0000000",class: "col-md-2"%>
+         <%= f.text_field :zip_code,class: "col-md-2"%>
     </div>
     <div class="row my-3">
          <div class="col-md-3">
           住所
         </div>
-         <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0",class: "col-md-5"%>
+         <%= f.text_field :address,class: "col-md-5"%>
     </div>
     <div class="row my-3">
          <div class="col-md-3">
           宛名
         </div>
-         <%= f.text_field :name,placeholder: "令和道子",class: "col-md-2" %>
+         <%= f.text_field :name,class: "col-md-2" %>
     </div>
    <div class="row">
         <div class="mx-auto col-md-4">

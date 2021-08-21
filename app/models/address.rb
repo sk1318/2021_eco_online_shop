@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
     belongs_to :customer
-    validates :zip_code,presence: true
+    validates :zip_code,presence: true,numericality: {only_integer: true}
     validates :address,presence: true
     validates :name,presence: true
     

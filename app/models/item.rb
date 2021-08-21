@@ -9,4 +9,5 @@ class Item < ApplicationRecord
     validates :introduction
     validates :price
     end
+    validates :price,numericality: {only_integer: true}
 end

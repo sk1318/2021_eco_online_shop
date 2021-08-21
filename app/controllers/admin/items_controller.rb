@@ -1,5 +1,5 @@
 class Admin::ItemsController < Admin::ApplicationController
-    before_action :set_item,only: [:show,:edit,:update]
+    before_action :set_item,only: [:show,:edit,:update,:destroy]
     
     def new
         @item = Item.new
@@ -26,6 +26,12 @@ class Admin::ItemsController < Admin::ApplicationController
     
     def show
         
+    end
+    
+    def destroy
+        @item.destroy
+        flash[:success]="削除しました"
+        redirect_to admin_items_path
     end
     
     def edit

@@ -1,4 +1,11 @@
     <big class="silver"><%= @customer.all_name%>さんの会員情報編集</big>
+    <% if @customer.errors.any? %>
+    <ul class="error">
+     <% @customer.errors.full_messages.each do |error| %>
+     <li class="error"><%= error %></li>
+     <% end %>
+    </ul>
+    <% end %>
     <%= form_with model: @customer,url: admin_customer_path(@customer),local: true do |f| %>
 　  <div class="row">
 　    <div class="col-md-3">
