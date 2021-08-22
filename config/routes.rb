@@ -19,6 +19,14 @@ Rails.application.routes.draw do
   
   
   scope module: :public do
+    resources :card, only: [:new, :show] do
+      collection do
+        post 'show', to: 'card#show'
+        post 'pay', to: 'card#pay'
+        post 'delete', to: 'card#delete'
+      end
+    end
+    
     get "customers/mypage"=> "customers#show",as: "mypage"
     get "customers/edit"=>"customers#edit",as: "edit_customer"
     patch "customers"=>"customers#update"
