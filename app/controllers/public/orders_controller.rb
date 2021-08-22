@@ -34,6 +34,7 @@ class Public::OrdersController < Public::ApplicationController
         @order_detail.save #注文商品を保存
         end #ループ終わり
         current_customer.cart_items.destroy_all #カートの中身を削除
+        OrdersMailer.send_mail(@order).deliver_now
         redirect_to done_path
     end
 
@@ -42,7 +43,7 @@ class Public::OrdersController < Public::ApplicationController
         @cart_items = current_customer.cart_items
         @peyment_method = params[:order][:peyment_method]
         @shipping_cost = 800
-        
+
         if  params[:order][:option] == "0"
            @address_all =  current_customer.address_all
            @zip_code = current_customer.zip_code
@@ -92,7 +93,7 @@ class Public::OrdersController < Public::ApplicationController
             redirect_to cart_items_path
         end
     end
-    
+
     def payjp_check
         if params[:order][:peyment_method]== "クレジットカード"
             Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
