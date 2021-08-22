@@ -1,6 +1,7 @@
 class Public::OrdersController < Public::ApplicationController
     include CommonActions
     before_action :carts_empty_check,except: [:done,:index,:show]
+    before_action :payjp_check,only: [:create]
 
     def index
         @orders = current_customer.orders.all
@@ -20,17 +21,20 @@ class Public::OrdersController < Public::ApplicationController
     def create
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
+        if params[:order][:peyment_method]== "クレジットカード"
+        @order.status = 1
+        end
         @order.save
-          current_customer.cart_items.each do |cart_item| #カートの商品を1つずつ取り出しループ
-          @order_detail = OrderDetail.new #初期化宣言
-          @order_detail.item_id = cart_item.item_id #商品idを注文商品idに代入
-          @order_detail.amount = cart_item.amount #商品の個数を注文商品の個数に代入
-          @order_detail.price = (cart_item.item.price)*1.1 #消費税込みに計算して代入
-          @order_detail.order_id =  @order.id #注文商品に注文idを紐付け
-          @order_detail.save #注文商品を保存
-          end #ループ終わり
-      current_customer.cart_items.destroy_all #カートの中身を削除
-      redirect_to done_path
+        current_customer.cart_items.each do |cart_item| #カートの商品を1つずつ取り出しループ
+        @order_detail = OrderDetail.new #初期化宣言
+        @order_detail.item_id = cart_item.item_id #商品idを注文商品idに代入
+        @order_detail.amount = cart_item.amount #商品の個数を注文商品の個数に代入
+        @order_detail.price = (cart_item.item.price)*1.1 #消費税込みに計算して代入
+        @order_detail.order_id =  @order.id #注文商品に注文idを紐付け
+        @order_detail.save #注文商品を保存
+        end #ループ終わり
+        current_customer.cart_items.destroy_all #カートの中身を削除
+        redirect_to done_path
     end
 
     def confirm
@@ -86,6 +90,22 @@ class Public::OrdersController < Public::ApplicationController
     def carts_empty_check
         if current_customer.cart_items.count == 0
             redirect_to cart_items_path
+        end
+    end
+    
+    def payjp_check
+        if params[:order][:peyment_method]== "クレジットカード"
+            Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+            if params[:order][:amount_biled].present? && params['payjp-token'].present?
+                Payjp::Charge.create(
+                :amount => params[:order][:amount_biled],
+                :card => params['payjp-token'],
+                :currency => 'jpy'
+                )
+            else
+                flash[:error]= "注文できませんでした。クレジットカード情報を登録して下さい。"
+                redirect_to orders_confirm_path
+            end
         end
     end
 end

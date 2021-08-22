@@ -1,29 +1,33 @@
     <big class="silver">注文情報入力</big>
         <%= form_with model: @order, url: confirm_path,local: true do |f| %>
-        <h4>支払方法</h4>
-        <%= f.radio_button :peyment_method, :クレジットカード, checked: true %>クレジットカード
-　　　　<%= f.radio_button :peyment_method, :銀行振込 %>銀行振込<br>
-　　　　<h4>お届け先</h4>
-        <%= f.radio_button :option,0,checked: true %>ご自身の住所<br>
-        <%= current_customer.address_all %><br>
-        <%= f.radio_button :option,1 %>登録済み住所から選択<br>
-        <%= f.collection_select :option_address, Address.all, :id, :address_all%><br>
-        <%= f.radio_button :option,2 %>大学へ送付（白門祭実行委員会で管理）<br>
-        <%= f.radio_button :option,3 %>新しいお届け先<br>
+        <div class="row">
+            <div class="col-md-8">
+             <h4>支払方法</h4>
+            <%= f.radio_button :peyment_method, :クレジットカード, checked: true %>クレジットカード
+    　　　　<%= f.radio_button :peyment_method, :銀行振込 %>銀行振込<br>
+    　　　　<h4>お届け先</h4>
+            <%= f.radio_button :option,0,checked: true %>ご自身の住所<br>
+            <%= current_customer.address_all %><br>
+            <%= f.radio_button :option,1 %>登録済み住所から選択<br>
+            <%= f.collection_select :option_address, Address.all, :id, :address_all,{prompt: "選択してください"}, {class: "form-control"}%><br>
+            <%= f.radio_button :option,2 %>大学へ送付（白門祭実行委員会で管理）<br>
+            <%= f.radio_button :option,3 %>新しいお届け先
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-3">
                 郵便番号(ハイフンなし)
             </div>
             <div class="col-md-5">
-                <%= f.text_field :zip_code ,placeholder: "0000000"%>
+                <%= f.text_field :zip_code ,placeholder: "0000000",class: "form-control"%>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
                 住所
             </div>
-            <div class="col-md-5">
-                <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0" %>
+            <div class="col-md-8">
+                <%= f.text_field :address,placeholder: "東京都渋谷区代々木神園町0-0",class: "form-control" %>
             </div>
         </div>
         <div class="row">
@@ -31,7 +35,7 @@
                 宛名
             </div>
             <div class="col-md-5">
-                <%= f.text_field :name,placeholder: "令和道子"%>
+                <%= f.text_field :name,placeholder: "令和道子",class: "form-control"%>
             </div>
         </div>
         <%= f.submit '確認画面へ進む',class: "btn btn-success my-3"%>

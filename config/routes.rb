@@ -26,6 +26,8 @@ Rails.application.routes.draw do
         post 'delete', to: 'card#delete'
       end
     end
+    get 'products/index'=>"products#index"
+    post 'products/pay'=>"products#pay"
     
     get "customers/mypage"=> "customers#show",as: "mypage"
     get "customers/edit"=>"customers#edit",as: "edit_customer"
