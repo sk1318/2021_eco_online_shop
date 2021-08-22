@@ -17,4 +17,4 @@ Item.create!(genre_id:1,name: "平皿",introduction: "ホットケーキ等で�
 Item.create!(genre_id:2,name: "丼容器",introduction: "どんぶり、おでん等で使います。",price: 200,image: File.open("./app/assets/images/donburi.jpeg"))
 Item.create!(genre_id:3,name: "食品トレー",introduction: "焼きそばやチヂミ等で使います",price: 200,image: File.open("./app/assets/images/syokuhintore.jpeg"))
 Item.create!(genre_id:4,name: "ホットドッグトレー",introduction: "ホットドッグ等で使います。",price: 200,image: File.open("./app/assets/images/hotdog.jpeg"))
-Address.create!(customer_id: 1,zip_code: "197-4437",address: "東京都新宿区４－５",name: "鈴木一郎")
+Address.create!(customer_id: 1,zip_code: "1974437",address: "東京都新宿区４－５",name: "鈴木一郎")
