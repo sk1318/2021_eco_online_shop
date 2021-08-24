@@ -4,9 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-     <h2><%= @order.customer.all_name %> 様</h2>
+    <p><%= @order.customer.all_name %> 様</p>
     <p>この度は、白門祭エコ容器オンラインショップ をご利用いただきまして、誠にありがとうございます。</p>
-    <h2>ご注文明細</h2>
+    <p>ご注文明細</p>
+    <p>------------------------------------------</p>
     <p>【ご注文者】<%= @order.customer.all_name %></p>
     <p>【注文番号】<%= @order.id %></p>
     <p>【ご注文日時】<%= @order.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p><br>
@@ -26,7 +27,7 @@
     <p>お支払金額(税込)：<%= @order.total_merchandise + @order.delivery_charge %>円</p><br>
     <p>【お支払い方法】</p>
     <p><%= @order.peyment_method %></p>
-    <br>
+    <p>------------------------------------------</p>
     <p>ご不明な点などは、お気軽にお問い合わせくださいませ。</p>
   </body>
 </html>

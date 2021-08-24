@@ -12,6 +12,8 @@ class Public::OrdersController < Public::ApplicationController
     end
 
     def done
+        @order = current_customer.orders.last
+
     end
 
     def new
