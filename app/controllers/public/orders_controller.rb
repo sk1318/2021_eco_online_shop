@@ -37,6 +37,7 @@ class Public::OrdersController < Public::ApplicationController
         end #ループ終わり
         current_customer.cart_items.destroy_all #カートの中身を削除
         OrdersMailer.send_mail(@order).deliver_now
+        AdminMailer.send_mail(@order).deliver_now
         redirect_to done_path
     end
 
