@@ -1,11 +1,12 @@
 # 白門祭エコ容器オンラインショップ
-![image](https://user-images.githubusercontent.com/69100635/130967759-00ae1648-ee80-496a-aa6c-31fb678a4964.png)
+![image](https://user-images.githubusercontent.com/69100635/131132242-93548c48-6832-49ff-9909-2033b4f4d442.png)
+
 ## 概要
 中央大学白門祭で販売する「エコ容器」専用のECサイトです。<br>
 「エコ容器」とは屋台等で使われる、リサイクル可能な食品容器です。<br>
 
 ## URL
-[エコ容器オンラインショップ(顧客ページ)](https://nameless-lowlands-21534.herokuapp.com/)<br>
+[エコ容器オンラインショップ(顧客ページ)](https://morning-eyrie-27166.herokuapp.com/)<br>
 [エコ容器オンラインショップ(管理者ページ)](https://nameless-lowlands-21534.herokuapp.com/admin/sign_in)
 　　　
 ## テスト用アカウント
@@ -47,7 +48,7 @@ Rails 5.2.6
 - 配送先追加・編集機能
 - 注文履歴一覧表示機能
 - 注文履歴詳細表示機能
-- 商品・ジャンル検索機能
+- ジャンル検索機能
 
 ### 管理者ページ
 - ログイン機能
@@ -67,6 +68,8 @@ Rails 5.2.6
 - pay.jpの外部APIを使ってクレジットカード決済を行えるようにした
 - 注文完了時に注文者と全ての管理者のメールアドレスに注文完了通知メールが送信される機能。
 - Amazon S3を利用した画像保存機能。
+![image](https://user-images.githubusercontent.com/69100635/131134345-b44215db-ff05-49dc-b75a-111f52a312ef.png)
+![image](https://user-images.githubusercontent.com/69100635/131134468-741e33a8-5159-4c8d-aab0-7ee0d6ddf0d9.png)
 
 ## 開発者
 新村康介
