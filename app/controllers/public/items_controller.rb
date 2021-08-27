@@ -2,6 +2,7 @@ class Public::ItemsController < Public::ApplicationController
     skip_before_action :authenticate_customer!
     def index
         @items = Item.all
+        @genres = Genre.all
     end
     
     def show

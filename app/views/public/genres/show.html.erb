@@ -2,9 +2,10 @@
   <div class="card-header bg-warning">
   <div class="dropdown">
   <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    全ての商品
+   <%= @genre.name %>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+   <%= link_to "全ての商品",items_path,class: "dropdown-item"%>
    <% @genres.each do |genre| %>
    <%= link_to genre.name, genre_path(genre),class: "dropdown-item" %>
    <% end %>

@@ -43,5 +43,6 @@ Rails.application.routes.draw do
     get "orders/done"=> "orders#done",as: "done"
     resources :orders,only:[:index,:show,:create,:new]
     resources :addresses,only:[:index,:create,:edit,:update,:destroy]
+    resources :genres,only:[:show]
   end
 end
