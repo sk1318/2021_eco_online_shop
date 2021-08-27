@@ -1,15 +1,16 @@
 <div class="slick">
   <div>
-      <%= image_tag 'donburi.jpeg',class: "c" %>
+      <%= image_tag 'ecology.jpeg',class: "c" %>
   </div>
    <div>
-      <%= image_tag 'donburi.jpeg',class: "c" %>
+      <%= image_tag '210827_0.jpg',class: "c" %>
   </div>
    <div>
-      <%= image_tag 'donburi.jpeg' ,class: "c"%>
+      <%= image_tag '210827_1.jpg' ,class: "c"%>
   </div>
 </div>
-    <h2> よく使われる商品</h2>
+<br>
+    <h2> オススメの商品</h2>
     <div class="row">
         <% @items.each do |item| %>
        <div class="mx-auto ">
@@ -19,4 +20,6 @@
        </div>
        <% end %>
     </div>
-    <%= link_to "全ての商品を見る",items_path %>
+    <div class="my-3">
+    <%= link_to "全ての商品を見る",items_path%>
+    </div>

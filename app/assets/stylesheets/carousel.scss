@@ -1,11 +1,14 @@
+.slick{
+ margin: 30px auto;
+}
 .slick-dots {
-  bottom: 25px;
   li button{
     &::before{
       height: 15px;
       width: 15px;
       background-color: rgb(116, 116, 116);
       border-radius: 50%;
+      content: "";
     }
   }
 }

@@ -39,7 +39,13 @@ th{
    border-bottom: solid 2px green;
 }
 .c {
-    height: 300px;
+    height: 500px;
     width : 100% ;
     
   }
+ @media screen and (max-width:768px){
+     .c{
+         height:200px;
+     }
+ }
+     
