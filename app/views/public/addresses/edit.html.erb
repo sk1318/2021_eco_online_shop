@@ -1,4 +1,6 @@
-    <big class="silver">配送先登録/一覧</big>
+ <div class="card border-secondry my-3">
+  <h5 class="card-header bg-secondry">配送先編集</h5>
+  <div class="card-body">
     <% if @address.errors.any? %>
     <ul class="error">
      <% @address.errors.full_messages.each do |error| %>
@@ -33,3 +35,5 @@
     </div>
     
     <% end %>
+  </div>
+</div>

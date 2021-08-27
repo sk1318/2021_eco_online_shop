@@ -1,5 +1,7 @@
-    <big class="silver">注文情報入力</big>
-        <%= form_with model: @order, url: confirm_path,local: true do |f| %>
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">注文情報入力</h5>
+  <div class="card-body">
+    <%= form_with model: @order, url: confirm_path,local: true do |f| %>
         <div class="row">
             <div class="col-md-8">
              <h4>支払方法</h4>
@@ -7,10 +9,10 @@
     　　　　<%= f.radio_button :peyment_method, :銀行振込 %>銀行振込<br>
     　　　　<h4>お届け先</h4>
             <%= f.radio_button :option,0,checked: true %>ご自身の住所<br>
-            <%= current_customer.address_all %><br>
+            <%= current_customer.address_all %><br><br>
             <%= f.radio_button :option,1 %>登録済み住所から選択<br>
             <%= f.collection_select :option_address, Address.all, :id, :address_all,{prompt: "選択してください"}, {class: "form-control"}%><br>
-            <%= f.radio_button :option,2 %>大学へ送付（白門祭実行委員会で管理）<br>
+            <%= f.radio_button :option,2 %>大学へ送付（白門祭実行委員会で管理）<br><br>
             <%= f.radio_button :option,3 %>新しいお届け先
             </div>
         </div>
@@ -38,5 +40,10 @@
                 <%= f.text_field :name,placeholder: "令和道子",class: "form-control"%>
             </div>
         </div>
-        <%= f.submit '確認画面へ進む',class: "btn btn-success my-3"%>
+        <div class="mx-auto col-md-4">
+        <%= f.submit '確認画面へ進む',class: "btn btn-block btn-warning my-3"%>
+        </div>
         <% end %>
+  </div>
+</div>
+

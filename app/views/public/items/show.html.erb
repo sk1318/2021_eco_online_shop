@@ -1,3 +1,6 @@
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">商品詳細</h5>
+  <div class="card-body">
     <div class="row my-3">
         <div class="col-lg-3 offset-3">
             <%= image_tag @item.image.variant(resize:'200x100') if @item.image.attached? %><br>
@@ -24,3 +27,5 @@
             <% end %>
         </div>
     </div>
+ </div>
+</div>

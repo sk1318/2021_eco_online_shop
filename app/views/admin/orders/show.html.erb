@@ -1,10 +1,12 @@
-    <big class="silver">注文履歴詳細</big>
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">注文履歴詳細</h5>
+  <div class="card-body">
     <div class="row">
         <div class="col-md-2">
             <b>注文番号</b>
         </div>
         <div class="col-md-5">
-           <%= @order.id %> 
+           <%= @order.id %>
         </div>
     </div>
     <div class="row">
@@ -12,7 +14,7 @@
             <b>購入者</b>
         </div>
         <div class="col-md-5">
-           <%= @order.customer.all_name %> 
+           <%= @order.customer.all_name %>
         </div>
     </div>
     <div class="row">
@@ -20,7 +22,7 @@
             <b>注文日</b>
         </div>
         <div class="col-md-5">
-           <%= @order.created_at %> 
+           <%= @order.created_at %>
         </div>
     </div>
     <div class="row">
@@ -28,7 +30,7 @@
             <b>配送先</b>
         </div>
         <div class="col-md-5">
-           <%= @order.address_all %> 
+           <%= @order.address_all %>
         </div>
     </div>
      <div class="row">
@@ -36,7 +38,7 @@
             <b>支払方法</b>
         </div>
         <div class="col-md-5">
-           <%= @order.peyment_method %> 
+           <%= @order.peyment_method %>
         </div>
     </div>
      <div class="row">
@@ -73,3 +75,5 @@
         <% end %>
     </table>
     </div>
+    </div>
+</div>

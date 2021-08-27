@@ -1,12 +1,14 @@
-    <big class="silver">商品一覧</big>
+<div class="card border my-3">
+  <h5 class="card-header">商品一覧</h5>
+  <div class="card-body">
     <div class="my-3">
     <%= link_to new_admin_item_path do %>
-    <button type="button" class=" btn btn-secondary rounded-circle p-2">＋</button> 
+    <button type="button" class=" btn btn-secondary rounded-circle p-2">＋</button>
     <% end %>
-   
+
     </div>
     <table class="table">
-        <tr>
+        <tr class="table-info">
             <th>商品ID</th>
             <th>商品名</th>
             <th>税抜価格</th>
@@ -27,3 +29,5 @@
         </tr>
         <% end %>
     </table>
+ </div>
+</div>

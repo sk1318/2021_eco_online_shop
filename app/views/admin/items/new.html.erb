@@ -1,50 +1,54 @@
-<big class="silver">商品新規登録</big>
-<% if @item.errors.any? %>
-    <ul class="error">
-     <% @item.errors.full_messages.each do |error| %>
-     <li class="error"><%= error %></li>
-     <% end %>
-    </ul>
-<% end %>
- <%= form_with model: @item ,url: admin_items_path,local: true do |f|%>
-<div class="row my-3">
-        <div class="col-md-3">商品画像</div>
-        <div class="col-md-3">
-            <%= f.file_field :image %>
-        </div>
-    </div>
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">商品新規登録</h5>
+  <div class="card-body">
+    <% if @item.errors.any? %>
+        <ul class="error">
+         <% @item.errors.full_messages.each do |error| %>
+         <li class="error"><%= error %></li>
+         <% end %>
+        </ul>
+    <% end %>
+     <%= form_with model: @item ,url: admin_items_path,local: true do |f|%>
     <div class="row my-3">
-        <div class="col-md-3">商品名</div>
-        <div class="col-md-3">
-            <%= f.text_field :name,placeholder: "商品名",class: "form-control" %>
+            <div class="col-md-3">商品画像</div>
+            <div class="col-md-3">
+                <%= f.file_field :image %>
+            </div>
         </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-md-3">商品説明</div>
-        <div class="col-md-3">
-            <%= f.text_area :introduction,placeholder: "商品説明",class: "form-control"%>
+        <div class="row my-3">
+            <div class="col-md-3">商品名</div>
+            <div class="col-md-3">
+                <%= f.text_field :name,placeholder: "商品名",class: "form-control" %>
+            </div>
         </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-md-3">ジャンル</div>
-        <div class="col-md-3">
-        <%= f.collection_select :genre_id, Genre.all, :id, :name %>　　　
+        <div class="row my-3">
+            <div class="col-md-3">商品説明</div>
+            <div class="col-md-3">
+                <%= f.text_area :introduction,placeholder: "商品説明",class: "form-control"%>
+            </div>
         </div>
-    </div>
-     <div class="row my-3">
-        <div class="col-md-3">税抜価格</div>
-        <div class="col-md-3">
-        <%= f.text_field :price,placeholder: "1000",class: "form-control" %>
+        <div class="row my-3">
+            <div class="col-md-3">ジャンル</div>
+            <div class="col-md-3">
+            <%= f.collection_select :genre_id, Genre.all, :id, :name %>　　　
+            </div>
         </div>
-    </div>
-     <div class="row my-3">
-        <div class="col-md-3">販売ステータス</div>
-        <div class="col-md-3">
-        <%= f.radio_button :is_active,true %>
-        <%= f.label "販売中"%>
-        <%= f.radio_button :is_active,false  %>  
-        <%= f.label "販売停止中"%>
-        <%= f.submit "保存",class: "btn btn-block btn-success" %>
+         <div class="row my-3">
+            <div class="col-md-3">税抜価格</div>
+            <div class="col-md-3">
+            <%= f.text_field :price,placeholder: "1000",class: "form-control" %>
+            </div>
         </div>
-    </div>
-<% end %>
+         <div class="row my-3">
+            <div class="col-md-3">販売ステータス</div>
+            <div class="col-md-3">
+            <%= f.radio_button :is_active,true %>
+            <%= f.label "販売中"%>
+            <%= f.radio_button :is_active,false  %>  
+            <%= f.label "販売停止中"%>
+            <%= f.submit "保存",class: "btn btn-block btn-success" %>
+            </div>
+        </div>
+    <% end %>
+  </div>
+</div>

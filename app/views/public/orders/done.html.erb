@@ -1,8 +1,12 @@
-<h2 class="mx-auto my-3">ご注文ありがとうございました！</h2>
-<p>お客様のご注文番号は以下となります。</p>
-<p>ご注文番号：<%= @order.id %></p>
-<p>追って、ご注文の確認メールをお送りしますので、そちらも必ずご確認ください。</p>
-
-    <div class="row">
-        <%= link_to "注文履歴を確認する",orders_path,class: "btn btn-warning mx-auto my-3 " %>
+<div class="card border-warning my-3">
+    <h5 class="card-header bg-warning">ご注文完了</h5>
+    <div class="card-body">
+        <h2 class="mx-auto my-3">ありがとうございました!</h2>
+        <p>お客様のご注文番号は以下となります。</p>
+        <p>ご注文番号：<%= @order.id %></p>
+        <p>追って、ご注文の確認メールをお送りしますので、そちらも必ずご確認ください。</p>
+        <div class="row">
+            <%= link_to "注文履歴を確認する",orders_path,class: "btn btn-success mx-auto my-3 " %>
+        </div>
     </div>
+</div>

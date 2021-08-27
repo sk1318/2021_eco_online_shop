@@ -1,4 +1,6 @@
-    <big class="silver">商品一覧</big>(全<%= @items.count %>件)
+  <div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">商品一覧</h5>
+  <div class="card-body"> 
     <div class="row">
        <% @items.each do |item| %>
        <div class="col-lg-3 my-3">
@@ -8,3 +10,5 @@
        </div>
        <% end %>
     </div>
+   </div>
+</div>

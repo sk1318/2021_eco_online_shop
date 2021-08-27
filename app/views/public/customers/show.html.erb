@@ -1,12 +1,13 @@
-<big class="silver">マイページ</big><br>
-
+<div class="card border-secondry my-3">
+  <h5 class="card-header bg-secondry">マイページ</h5>
+  <div class="card-body">
 <big>登録情報</big>
 <%= link_to "編集する",edit_customer_path,class: "btn btn-success m-3 px-3" %>
 
 <table class="table table-bordered">
     
     <tr>
-        <th>氏名</th><td><%= @customer.last_name %><%= @customer.first_name %></td>
+        <th >氏名</th><td><%= @customer.last_name %><%= @customer.first_name %></td>
     </tr>
     <tr>
         <th>カナ</th><td><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
@@ -36,4 +37,6 @@
        <big>注文履歴</big>
     </div>
 <%= link_to "一覧を見る",orders_path,class: "btn btn-primary m-3 px-3" %>
+</div>
+ </div>
 </div>

@@ -1,4 +1,6 @@
-    <big class="silver">ジャンル一覧・追加</big>
+ <div class="card my-3">
+  <h5 class="card-header">ジャンル一覧・追加</h5>
+  <div class="card-body">
     <div class="row my-3">
         <div class="col-md-3 text-center">
           <p>ジャンル名</p>
@@ -15,7 +17,7 @@
         </div>
     </div>
     <div class="col-md-5">
-        
+
     <table class="table">
         <tr>
             <td>ジャンル</td>
@@ -26,7 +28,9 @@
             <td><%= genre.name %></td>
             <td><%= link_to "編集する",edit_admin_genre_path(genre),class: "btn btn-success" %></td>
         </tr>
-        
+
         <% end %>
     </div>
     </table>
+  </div>
+</div>

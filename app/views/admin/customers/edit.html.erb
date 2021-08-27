@@ -1,4 +1,6 @@
-    <big class="silver"><%= @customer.all_name%>さんの会員情報編集</big>
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning"><%= @customer.all_name%>さんの会員情報編集</h5>
+  <div class="card-body">    
     <% if @customer.errors.any? %>
     <ul class="error">
      <% @customer.errors.full_messages.each do |error| %>
@@ -79,7 +81,9 @@
 　   </div>
 　   <div class="row">
 　     <div class="col-md-6 mx-auto">
-       <%= f.submit "保存",class: "btn btn-success btn-block" %>
+       <%= f.submit "保存",class: "btn btn-warning btn-block" %>
 　     </div>
 　   </div>
     <% end %>
+ </div>
+</div>

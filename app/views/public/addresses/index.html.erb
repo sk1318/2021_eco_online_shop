@@ -1,5 +1,7 @@
-    <div class="container">
-    <big class="silver">配送先登録/一覧</big><br>
+<div class="card border-warning my-3">
+  <h5 class="card-header bg-warning">注文情報入力</h5>
+  <div class="card-body"> 
+   <big class="silver">配送先登録/一覧</big><br>
     <% if @address.errors.any? %>
     <ul class="error">
      <% @address.errors.full_messages.each do |error| %>
@@ -71,4 +73,5 @@
         <% end %>
     </table>
     </div>
-    </div>
+ </div>
+</div>

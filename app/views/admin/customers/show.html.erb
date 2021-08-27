@@ -1,4 +1,6 @@
-    <big class="silver"><%= @customer.all_name%>さんの会員詳細</big>
+<div class="card  my-3">
+  <h5 class="card-header"><%= @customer.all_name%>さんの会員詳細</h5>
+  <div class="card-body">
     <table class="table table-bordered my-3">
         <tr>
             <th>会員ID</th>
@@ -45,3 +47,5 @@
             <%= link_to "注文履歴一覧を見る",admin_orders_path,class: "btn btn-block btn-warning"%>
         </div>
     </div>
+ </div>
+</div>
