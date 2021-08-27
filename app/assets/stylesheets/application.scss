@@ -16,6 +16,9 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import "slick-theme";
+@import "slick";
+@import "carousel";
 .silver{
     background-color: #EEEEEE;
 }
@@ -35,3 +38,8 @@ th{
 .border_color{
    border-bottom: solid 2px green;
 }
+.c {
+    height: 300px;
+    width : 100% ;
+    
+  }
