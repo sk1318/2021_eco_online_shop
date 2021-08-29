@@ -75,7 +75,7 @@ pass: AdminTest
 ## インストール手順
 1. リポジトリをコピーします。
 ```bash
-$ git clone git@github.com:sk1318/2021_eco_online_shop.git
+$ git clone git@github.com:sk1318/eco_online_shop.git
 ```
 
 2.作業用ディレクトリを移動します。
