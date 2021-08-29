@@ -1,5 +1,5 @@
 ## 🍀白門祭エコ容器オンラインショップ
-![image](https://user-images.githubusercontent.com/69100635/131132242-93548c48-6832-49ff-9909-2033b4f4d442.png)
+![image](https://user-images.githubusercontent.com/69100635/131252902-ce7b0d51-66a2-4d60-a66a-fac2be036619.png)
 
 ## 📙概要
 中央大学白門祭で販売する「エコ容器」のECサイトです。<br>
@@ -15,7 +15,9 @@
 白門祭に参加する飲食団体の方が、時間・場所を問わずエコ容器を購入できる
 
 ## 🌐URL
-[エコ容器オンラインショップ(顧客ページ)](https://morning-eyrie-27166.herokuapp.com/)<br>
+### 顧客ページ
+[エコ容器オンラインショップ(顧客ページ)](https://morning-eyrie-27166.herokuapp.com/)
+### 管理者ページ
 [エコ容器オンラインショップ(管理者ページ)](https://morning-eyrie-27166.herokuapp.com/admin/sign_in)
 　　　
 ## 👇テスト用アカウント
@@ -53,6 +55,7 @@ pass: AdminTest
 - ログアウト機能
 - 注文履歴一覧表示機能
 - 注文履歴詳細表示機能
+- 商品の製作ステータスと注文ステータス管理機能
 - 顧客一覧表示機能
 - 顧客詳細情報表示機能
 - 顧客情報編集機能
@@ -63,13 +66,14 @@ pass: AdminTest
 - 商品検索機能
 
 ## 📙工夫した点
-### pay.jpのAPIを使ったクレジットカード決済
+### PAY.JPのAPIを使ったクレジットカード決済
 ![image](https://user-images.githubusercontent.com/69100635/131134468-741e33a8-5159-4c8d-aab0-7ee0d6ddf0d9.png)
-### 注文完了時のメール通知機能
+### 注文完了時のメール通知機能(注文者とシステム管理者宛てメール)
 <img src="https://user-images.githubusercontent.com/69100635/131238116-6df7120d-0999-4426-9079-f94dd51ba252.png" width="300px"><img src="https://user-images.githubusercontent.com/69100635/131238099-496a7694-c163-4afe-b16b-cc6bb970137d.png" width="300px">
 ### Amazon S3を利用したエコ容器画像アップロード
 ![image](https://user-images.githubusercontent.com/69100635/131240231-1052ba7c-4555-42a2-aea9-24329d82e611.png)
-
+### 注文ステータスや製作ステータス管理機能
+![image](https://user-images.githubusercontent.com/69100635/131252844-952302ae-2087-4dc0-b990-2d93e4f9f00b.png)
 
 
 ## 📙インストール手順
