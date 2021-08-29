@@ -72,7 +72,7 @@ pass: AdminTest
 
 
 
-## インストール手順
+## 📙インストール手順
 1. リポジトリをコピーします。
 ```bash
 $ git clone git@github.com:sk1318/eco_online_shop.git
@@ -99,4 +99,4 @@ $ rails s
 ```
 
 ## 開発者
-新村康介
+kosuke_shimura
