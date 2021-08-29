@@ -1,15 +1,24 @@
-# 白門祭エコ容器オンラインショップ
+## 🍀白門祭エコ容器オンラインショップ
 ![image](https://user-images.githubusercontent.com/69100635/131132242-93548c48-6832-49ff-9909-2033b4f4d442.png)
 
-## 概要
-中央大学白門祭で販売する「エコ容器」専用のECサイトです。<br>
-「エコ容器」とは屋台等で使われる、リサイクル可能な食品容器です。<br>
+## 📙概要
+中央大学白門祭で販売する「エコ容器」のECサイトです。<br>
+「エコ容器」とは屋台等で使われる、リサイクル可能な食品容器のことです。<br>
 
-## URL
+## 📙制作背景
+白門祭では毎年膨大な量のゴミが出ています。<br>
+環境対策として、白門祭実行委員会では参加団体の方へ「エコ容器」を使用することを呼びかけていました。<br>
+しかし、エコ容器は、大学構内でしか受付をしておらず、現金のみの販売となっています。<br>
+そこで、参加団体の方が、もっと手軽にエコ容器を購入できるシステムを作りたいと考え、エコ容器オンラインショップの制作に至りました。
+
+## 💡どんな問題を解決するのか？
+白門祭に参加する飲食団体の方が、時間・場所を問わずエコ容器を購入できる
+
+## 🌐URL
 [エコ容器オンラインショップ(顧客ページ)](https://morning-eyrie-27166.herokuapp.com/)<br>
 [エコ容器オンラインショップ(管理者ページ)](https://nameless-lowlands-21534.herokuapp.com/admin/sign_in)
 　　　
-## テスト用アカウント
+## 👇テスト用アカウント
 ### 顧客ページ
 email: 3222@example.com<br>
 pass: Webexample
@@ -17,18 +26,12 @@ pass: Webexample
 email: sk2322@example.com<br>
 pass: AdminTest
 
-## 制作背景
-白門祭では毎年膨大なゴミが出ます。<br>
-そこで白門祭実行委員会は、参加団体の方へエコ容器を販売してきました。<br>
-今まで現金のみの注文しか受け付けていませんでしたが、<br>
-参加団体がもっと手軽にエコ容器を購入できるシステムを作りたいと考え、制作に至りました。
-
-## 開発環境
+## 📙開発環境
 - 言語：HTML/CSS,JavaScript,Ruby 2.6.3
 - フレームワーク：Rails 5.2.6
-- IDE：AWs Cloud9
+- IDE：AWS Cloud9
 
-## 機能一覧
+## 📙機能一覧
 ### 顧客ページ
 - ログイン機能
 - ログアウト機能
@@ -59,12 +62,41 @@ pass: AdminTest
 - ジャンル設定機能
 - 商品検索機能
 
-## 工夫した機能
-- payjpでAPIを使ったクレジットカード購入機能
-- 注文完了時のメール送信機能。
-- Amazon S3を利用した画像アップロード
-![image](https://user-images.githubusercontent.com/69100635/131134345-b44215db-ff05-49dc-b75a-111f52a312ef.png)
+## 📙工夫した点
+### pay.jpのAPIを使ったクレジットカード決済
 ![image](https://user-images.githubusercontent.com/69100635/131134468-741e33a8-5159-4c8d-aab0-7ee0d6ddf0d9.png)
+### 注文完了時のメール通知機能
+<img src="https://user-images.githubusercontent.com/69100635/131238116-6df7120d-0999-4426-9079-f94dd51ba252.png" width="300px"><img src="https://user-images.githubusercontent.com/69100635/131238099-496a7694-c163-4afe-b16b-cc6bb970137d.png" width="300px">
+### Amazon S3を利用したエコ容器画像アップロード
+![image](https://user-images.githubusercontent.com/69100635/131240231-1052ba7c-4555-42a2-aea9-24329d82e611.png)
+
+
+
+## インストール手順
+1. リポジトリをコピーします。
+```bash
+$ git clone https://github.com/Nishimurasyota/Book-Bridge.git
+```
+
+2.作業用ディレクトリを移動します。
+```bash
+$ cd 2021_eco_online_shop
+```
+
+3. Gemをインストールします。
+```bash
+$ bundle install
+```
+
+4. テーブルを作成します。
+```bash
+$ rails db:migrate
+```
+
+5.サーバーを起動します。
+```bash
+$ rails s
+```
 
 ## 開発者
 新村康介
