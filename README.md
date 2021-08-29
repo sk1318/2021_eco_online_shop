@@ -24,15 +24,10 @@ pass: AdminTest
 参加団体がもっと手軽にエコ容器を購入できるシステムを作りたいと考え、制作に至りました。
 
 ## 開発環境
-ruby 2.6.3
-Rails 5.2.6
+- 言語：HTML/CSS,JavaScript,Ruby 2.6.3
+- フレームワーク：Rails 5.2.6
+- IDE：AWs Cloud9
 
-## 使用言語
-- HTML&CSS
-- Ruby
-- JavaScript
-#### フレームワーク
-- Rails
 ## 機能一覧
 ### 顧客ページ
 - ログイン機能
@@ -64,10 +59,10 @@ Rails 5.2.6
 - ジャンル設定機能
 - 商品検索機能
 
-## 注力・工夫した機能
-- pay.jpの外部APIを使ってクレジットカード決済を行えるようにした
-- 注文完了時に注文者と全ての管理者のメールアドレスに注文完了通知メールが送信される機能。
-- Amazon S3を利用した画像保存機能。
+## 工夫した機能
+- payjpでAPIを使ったクレジットカード購入機能
+- 注文完了時のメール送信機能。
+- Amazon S3を利用した画像アップロード
 ![image](https://user-images.githubusercontent.com/69100635/131134345-b44215db-ff05-49dc-b75a-111f52a312ef.png)
 ![image](https://user-images.githubusercontent.com/69100635/131134468-741e33a8-5159-4c8d-aab0-7ee0d6ddf0d9.png)
 
