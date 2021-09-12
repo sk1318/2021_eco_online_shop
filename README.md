@@ -72,7 +72,7 @@ pass: AdminTest
 <img src="https://user-images.githubusercontent.com/69100635/131238116-6df7120d-0999-4426-9079-f94dd51ba252.png" width="300px"><img src="https://user-images.githubusercontent.com/69100635/131238099-496a7694-c163-4afe-b16b-cc6bb970137d.png" width="300px">
 ### Amazon S3を利用したエコ容器画像アップロード
 ![image](https://user-images.githubusercontent.com/69100635/131240231-1052ba7c-4555-42a2-aea9-24329d82e611.png)
-### 注文ステータスや製作ステータス管理機能
+### 注文ステータスや制作ステータス管理機能
 ![image](https://user-images.githubusercontent.com/69100635/131252844-952302ae-2087-4dc0-b990-2d93e4f9f00b.png)
 
 
